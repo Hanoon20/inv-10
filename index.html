@@ -97,18 +97,12 @@
   @keyframes glowpulse{ 0%,100%{ opacity:0.6; } 50%{ opacity:1; } }
 
   .hero__seal{
-    position:relative;
     width:clamp(130px, 18vw, 210px);
-    aspect-ratio:997/552;
-    overflow:hidden;
     margin:0 auto 22px;
     filter:drop-shadow(0 10px 22px rgba(43,32,19,0.22));
     animation:sealfloat 6s ease-in-out infinite;
   }
-  .hero__seal img{
-    position:absolute; left:0; top:-12.9%;
-    width:100.5%; max-width:100.5%;
-  }
+  .hero__seal img{ display:block; width:100%; height:auto; }
   @keyframes sealfloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
 
   .hero__eyebrow{ margin-bottom:18px; }
@@ -334,7 +328,7 @@
   <div class="hero__glow"></div>
   <div class="hero__content">
     <div class="hero__seal">
-      <img src="Brown and White Traditional Wedding Card.svg" alt="Two interlocked gold wedding rings">
+      <img src="assets/rings.webp" alt="Two interlocked gold wedding rings" width="520" height="296">
     </div>
     <div class="hero__eyebrow eyebrow">Together with their families</div>
     <div class="hero__names">
