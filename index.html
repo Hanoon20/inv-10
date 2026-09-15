@@ -96,6 +96,21 @@
   }
   @keyframes glowpulse{ 0%,100%{ opacity:0.6; } 50%{ opacity:1; } }
 
+  .hero__seal{
+    position:relative;
+    width:clamp(130px, 18vw, 210px);
+    aspect-ratio:997/552;
+    overflow:hidden;
+    margin:0 auto 22px;
+    filter:drop-shadow(0 10px 22px rgba(43,32,19,0.22));
+    animation:sealfloat 6s ease-in-out infinite;
+  }
+  .hero__seal img{
+    position:absolute; left:0; top:-12.9%;
+    width:100.5%; max-width:100.5%;
+  }
+  @keyframes sealfloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+
   .hero__eyebrow{ margin-bottom:18px; }
   .hero__names{
     font-size:clamp(3.1rem, 11vw, 6.4rem);
@@ -268,7 +283,7 @@
 
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
-    .ring3d__stage, .hero__scrollcue svg, .hero__glow{ animation:none !important; }
+    .ring3d__stage, .hero__scrollcue svg, .hero__glow, .hero__seal{ animation:none !important; }
     .reveal{ transition:none; }
     .reveal.pre{ opacity:1; transform:none; }
   }
@@ -307,6 +322,9 @@
   </div>
   <div class="hero__glow"></div>
   <div class="hero__content">
+    <div class="hero__seal">
+      <img src="Brown and White Traditional Wedding Card.svg" alt="Two interlocked gold wedding rings">
+    </div>
     <div class="hero__eyebrow eyebrow">Together with their families</div>
     <div class="hero__names">
       <span class="script">Hizaam</span><span class="hero__amp">&amp;</span><span class="script">Saheeka</span>
