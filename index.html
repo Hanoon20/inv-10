@@ -245,7 +245,18 @@
     background:var(--ivory-deep); border:1px solid var(--gold-line); border-radius:6px; padding:40px;
   }
   @media (min-width:680px){ .venue-card{ grid-template-columns:auto 1fr; } }
-  .venue-pin svg{ width:96px; height:96px; color:var(--gold); }
+  .venue-pin{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    text-decoration:none; color:var(--gold); width:fit-content; margin:0 auto;
+    transition:color 0.25s ease, transform 0.25s ease;
+  }
+  .venue-pin svg{ width:96px; height:96px; color:inherit; transition:transform 0.25s ease; }
+  .venue-pin:hover, .venue-pin:focus-visible{ color:var(--emerald); transform:translateY(-3px); }
+  .venue-pin:hover svg, .venue-pin:focus-visible svg{ transform:scale(1.05); }
+  .venue-pin__label{
+    font-family:'Cormorant SC', serif; letter-spacing:0.18em; font-size:0.72rem;
+    text-transform:uppercase;
+  }
   .venue-info h3{ font-size:1.5rem; margin-bottom:6px; }
   .venue-info address{ font-style:normal; color:var(--ink-soft); margin-bottom:14px; }
   .venue-info p{ color:var(--ink-soft); max-width:52ch; margin:0; }
@@ -468,9 +479,10 @@
         <div class="rule"></div>
       </div>
       <div class="venue-card">
-        <div class="venue-pin">
+        <a class="venue-pin" href="https://www.google.com/maps/search/?api=1&amp;query=The+Rosewood+Manor%2C+Lakeview+Road%2C+near+Fig+Garden" target="_blank" rel="noopener noreferrer" aria-label="Open The Rosewood Manor in Google Maps">
           <svg viewBox="0 0 96 96" fill="none"><path d="M48 8 C 24 8, 12 26, 12 44 C 12 66, 48 88, 48 88 C 48 88, 84 66, 84 44 C 84 26, 72 8, 48 8 Z" stroke="currentColor" stroke-width="2"/><circle cx="48" cy="42" r="12" stroke="currentColor" stroke-width="2"/></svg>
-        </div>
+          <span class="venue-pin__label">View on map</span>
+        </a>
         <div class="venue-info">
           <h3>The Rosewood Manor</h3>
           <address>Lakeview Road, near Fig Garden &middot; ample on-site parking</address>
