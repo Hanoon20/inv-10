@@ -6,7 +6,7 @@
 <title>Hizaam &amp; Saheeka</title>
 <meta name="description" content="A cinematic, ornamental wedding invitation for Hizaam &amp; Saheeka's Nikah and Walima.">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500;600&family=Pinyon+Script&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500;600&family=Pinyon+Script&family=Aref+Ruqaa:wght@700&family=Amiri:wght@400;700&display=swap');
 
   :root{
     --ivory:#FBF3E3;
@@ -89,6 +89,14 @@
   .hero__vine-r svg{ transform:scaleX(-1); }
   .hero__sprig{ justify-content:center; align-items:flex-end; padding-bottom:6%; }
 
+  .hero__corner{
+    position:absolute; z-index:1;
+    width:clamp(90px,16vw,180px); height:auto;
+    opacity:0.92; pointer-events:none;
+  }
+  .hero__corner--bl{ bottom:-2%; left:-3%; }
+  .hero__corner--br{ bottom:-2%; right:-3%; transform:scaleX(-1); }
+
   .hero__content{ position:relative; z-index:2; padding:clamp(150px,20vw,220px) 12px 0; min-width:0; width:100%; max-width:100%; }
   .hero__glow{
     position:absolute; inset:-40% -20%;
@@ -106,6 +114,33 @@
   }
   .hero__seal img{ display:block; width:100%; height:auto; }
   @keyframes sealfloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+
+  .hero__bismillah{
+    font-family:'Aref Ruqaa', serif; direction:rtl;
+    color:var(--emerald); font-size:clamp(1.6rem, 5vw, 2.6rem);
+    margin-bottom:14px; line-height:1;
+  }
+  .hero__verse-divider{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin:0 auto 20px; max-width:220px;
+  }
+  .hero__verse-divider::before, .hero__verse-divider::after{
+    content:''; height:1px; flex:1; background:var(--gold-line);
+  }
+  .hero__verse-divider svg{ width:18px; height:18px; color:var(--gold); flex:none; }
+  .hero__verse{ margin:0 auto 30px; max-width:520px; }
+  .hero__verse-ar{
+    font-family:'Amiri', serif; direction:rtl;
+    color:var(--emerald-deep); font-size:clamp(1.3rem, 4vw, 2rem);
+    line-height:1.7; margin-bottom:10px;
+  }
+  .hero__verse-en{
+    font-style:italic; color:var(--ink-soft); font-size:1.02rem; margin-bottom:6px;
+  }
+  .hero__verse-cite{
+    font-family:'Cormorant SC', serif; letter-spacing:0.1em;
+    color:var(--gold); font-size:0.85rem; direction:rtl;
+  }
 
   .hero__eyebrow{ margin-bottom:18px; }
   .hero__names{
@@ -338,10 +373,21 @@
       <circle cx="46" cy="360" r="6" fill="var(--gold)"/>
     </svg>
   </div>
+  <img class="hero__corner hero__corner--bl" src="assets/bouquet-left.webp" alt="" aria-hidden="true">
+  <img class="hero__corner hero__corner--br" src="assets/bouquet-right.webp" alt="" aria-hidden="true">
   <div class="hero__glow"></div>
   <div class="hero__content">
     <div class="hero__seal">
       <img src="assets/rings.webp" alt="Two interlocked gold wedding rings" width="520" height="296">
+    </div>
+    <div class="hero__bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="hero__verse-divider">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c2 4-2 6 0 10-2-4 2-6 0-10zM12 22c-2-4 2-6 0-10 2 4-2 6 0 10zM2 12c4 2 6-2 10 0-4-2-6 2-10 0zM22 12c-4 2-6-2-10 0 4-2 6 2 10 0z" fill="currentColor"/></svg>
+    </div>
+    <div class="hero__verse">
+      <p class="hero__verse-ar">وَخَلَقْنَاكُمْ أَزْوَاجًا</p>
+      <p class="hero__verse-en">And We created you in pairs</p>
+      <p class="hero__verse-cite">[النبأ: 8]</p>
     </div>
     <div class="hero__eyebrow eyebrow">Together with their families</div>
     <div class="hero__names">
